@@ -69,9 +69,8 @@ let vowelBonusScore = function(word){
 
 //totals the points for the Entered word using newPointStructure
 let scrabbleScore = function(word){
-let newPointStructures={['AB']: 2};
-  word = word.toUpperCase();
-  let newPointValue =0;
+  word = word.toLowerCase();
+  let newPointValue = 0;
   for(let i=0; i< word.length; i++){
     for(let letter in newPointStructure){
       if(letter == word[i]){
@@ -130,7 +129,7 @@ function transform(oldPointStructure) {
   for(points in oldPointStructure){
    
     for(i=0; i < oldPointStructure[points].length; i++){
-      newStructure = oldPointStructure[points][i];
+      newStructure = oldPointStructure[points][i].toLowerCase();
       points = Number(points);
       newPointStructure[newStructure] = points;  
      }   
